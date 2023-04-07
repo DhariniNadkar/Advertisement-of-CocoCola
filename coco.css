@@ -1,0 +1,163 @@
+
+body {
+    width: 300px;
+    height: 250px;
+}
+
+.logo {
+    position: absolute;
+    left: 20;
+    top: 20;
+}
+
+#background {
+    background-image: url('https://wallpaperaccess.com/full/3410620.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* padding: 377px; */
+}
+
+.top-left {
+    position: absolute;
+    top: 100px;
+    left: 51px;
+    font-size: 20px;
+    color: white;
+    text-shadow: 4px 4px black;
+}
+
+
+.topright {
+    position: absolute;
+    top: 8px;
+    right: 1250px;
+    font-size: 18px;
+}
+
+.button {
+    background-color: whitesmoke;
+border: none;
+color: black;
+padding: 5px 8px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 11px;
+margin: 4px 2px;
+cursor: pointer;
+}
+
+
+
+.scenes {
+    position: relative;
+    aspect-ratio: 2.4 / 1;
+    outline: 2px solid #ccc;
+}
+
+.scene-1,
+.scene-2 {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+}
+
+.scene-1 {
+    background-image: url(http://24.media.tumblr.com/tumblr_mb9zx1DBe21rnve8fo1_500.gif);
+}
+
+.scene-2 {
+    background-image: url(https://cdn.myportfolio.com/e7b762fd7a95c96d4a7b748a0e5c2086/c777d243-6ca8-4b36-bbf0-00b15973d11e_rw_1200.gif?h=4f9ab39b51c8747eeccffd8f73b07acc);
+    -webkit-mask-image: linear-gradient(to right,
+            transparent 47.5%,
+            #fff 52.5%);
+    -webkit-mask-size: 210%;
+    -webkit-mask-position: left;
+}
+
+.scenes:is(:hover, :focus) .scene-2 {
+    -webkit-mask-position: right;
+    transition: -webkit-mask-position 2s linear;
+}
+
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+
+    place-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #fff;
+    background-color: white;
+    letter-spacing: 0.1em;
+}
+
+.wrapper {
+    width: min(130px, 100%);
+position: absolute;
+top: 185px;
+left: 80px;
+}
+
+.intro {
+    text-align: center;
+}
+
+.heading {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+.heading::before,
+.heading::after {
+    content: ' — ';
+}
+
+.nudge {
+    margin: 0;
+    color: #888;
+    font-size: 1.25em;
+}
+
+.visualizer {
+    display: flex;
+    justify-content: center;
+}
+
+.visualizer-frame {
+    position: relative;
+}
+
+.visualizer-mask {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 210%;
+    background-color: #333;
+    background-image:
+        linear-gradient(to right, transparent 47.5%, #fff 52.5%),
+        linear-gradient(45deg, #444 25%, transparent 25%, transparent 75%, #444 75%),
+        linear-gradient(45deg, #444 25%, transparent 25%, transparent 75%, #444 75%);
+    background-size:
+        auto auto,
+        16px 16px,
+        16px 16px;
+    background-position:
+        0 0,
+        0 0,
+        8px 8px;
+    box-shadow: inset 0 0 0 2px #111;
+}
+
+.scenes:is(:hover, :focus)+.visualizer .visualizer-mask {
+    transform: translateX(calc((100% - 210%) / 2.1));
+    transition: transform 2s linear;
+}

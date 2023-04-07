@@ -7,221 +7,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Home Page</title>
-    <style>
-        .logo {
-            position: absolute;
-            left: 200;
-            top: 90;
-        }
-
-        #background {
-            background-image: url('glass.jpg');
-            background-repeat: no-repeat;
-            background-size: cover;
-            padding: 377px;
-        }
-
-        .top-left {
-            position: absolute;
-            top: 100px;
-            left: 400px;
-            font-size: 70px;
-            color: white;
-            text-shadow: 4px 4px black;
-        }
-
-        .topright {
-            position: absolute;
-            top: 8px;
-            right: 16px;
-            font-size: 18px;
-        }
-
-        .button {
-            background-color: white;
-            border: none;
-            color: black;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-        }
-
-
-
-        .scenes {
-            position: relative;
-            aspect-ratio: 2.4 / 1;
-            outline: 2px solid #ccc;
-        }
-
-        .scene-1,
-        .scene-2 {
-            position: absolute;
-            inset: 0;
-            background-size: cover;
-        }
-
-        .scene-1 {
-            background-image: url(Animation.jpg);
-        }
-
-        .scene-2 {
-            background-image: url(coca2.jpg);
-            -webkit-mask-image: linear-gradient(to right,
-                    transparent 47.5%,
-                    #fff 52.5%);
-            -webkit-mask-size: 210%;
-            -webkit-mask-position: left;
-        }
-
-        .scenes:is(:hover, :focus) .scene-2 {
-            -webkit-mask-position: right;
-            transition: -webkit-mask-position 2s linear;
-        }
-
-        .scene-title {
-            position: absolute;
-            max-width: 45%;
-            margin: min(40px, 4vw);
-            font-size: 1.25em;
-        }
-
-        .scene-1 .scene-title {
-            top: 0;
-            left: 0;
-            color: #000;
-            text-align: left;
-        }
-
-        .scene-2 .scene-title {
-            top: 0;
-            right: 0;
-            color: black;
-            text-align: right;
-        }
-
-       *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-        }
-
-        body {
-
-            place-items: center;
-            min-height: 100vh;
-            margin: 0;
-            color: #fff;
-            background-color: #111;
-            letter-spacing: 0.1em;
-        }
-
-        .wrapper {
-            gap: 30px;
-            width: min(600px, 100%);
-            position: absolute;
-            bottom: 20px;
-           
-        }
-
-        .intro {
-            text-align: center;
-        }
-
-        .heading {
-            margin: 0;
-            font-size: 2.5em;
-        }
-
-        .heading::before,
-        .heading::after {
-            content: ' — ';
-        }
-
-        .nudge {
-            margin: 0;
-            color: #888;
-            font-size: 1.25em;
-        }
-
-        .visualizer {
-            display: flex;
-            justify-content: center;
-        }
-
-        .visualizer-frame {
-            position: relative;
-           }
-
-        .visualizer-mask {
-            position: absolute;
-            z-index: -1;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            width: 210%;
-            background-color: #333;
-            background-image:
-                linear-gradient(to right, transparent 47.5%, #fff 52.5%),
-                linear-gradient(45deg, #444 25%, transparent 25%, transparent 75%, #444 75%),
-                linear-gradient(45deg, #444 25%, transparent 25%, transparent 75%, #444 75%);
-            background-size:
-                auto auto,
-                16px 16px,
-                16px 16px;
-            background-position:
-                0 0,
-                0 0,
-                8px 8px;
-            box-shadow: inset 0 0 0 2px #111;
-        }
-
-        .scenes:is(:hover, :focus)+.visualizer .visualizer-mask {
-            transform: translateX(calc((100% - 210%) / 2.1));
-            transition: transform 2s linear;
-        }
-    </style>
+    <link rel="stylesheet" href="coco.css">
 </head>
 
 <body>
+
+
     <div class="logo">
-        <img src="logo.jpg" style="width: 100px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Coca-Cola_logo.svg/1200px-Coca-Cola_logo.svg.png"
+            style="width: 50px;">
     </div>
 
     <div id="background">
 
-        <div class="top-left">HAPPY NEW YEAR
+        <div class="top-left">WISH YOU A <br>HAPPY NEW YEAR
         </div>
         <div class="topright"> <a href="https://www.coca-colacompany.com/" class="button">Know More</a></div>
 
 
 
+        <div style="width: 300px ;height:250px;">
+            <div class="wrapper">
 
-        <div class="wrapper">
 
-
-            <div class="scenes" tabindex="0">
-                <div class="scene-1">
-                    <h2 class="scene-title">Refreshing the World</h2>
+                <div class="scenes" tabindex="0">
+                    <div class="scene-1">
+                        <!-- <h2 class="scene-title">Refreshing the World</h2> -->
+                    </div>
+                    <div class="scene-2">
+                        <!-- <h2 class="scene-title">Explore More</h2> -->
+                    </div>
                 </div>
-                <div class="scene-2">
-                    <h2 class="scene-title">Explore More</h2>
+
+                <div class="visualizer">
+                    <div class="visualizer-frame">
+                        <div class="visualizer-mask"></div>
+                    </div>
                 </div>
             </div>
 
-            <div class="visualizer">
-                <div class="visualizer-frame">
-                    <div class="visualizer-mask"></div>
-                </div>
-            </div>
         </div>
-
     </div>
-
 
 </body>
 
